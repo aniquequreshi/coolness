@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+<body>
+{% with answer='No Answer Given' privacy_status='PUBLIC'%}
+
+
+<h1>My Profile</h1>
+
+
+
+<label>Last Name</label>
+{% if person_detail.last_name_answer == privacy_status %}
+    {{ person_detail.last_name }}
+{% else %}
+    <label>{{ answer }}</label>
+{% endif %}
+<br>
+
+<label>First Name</label>
+{% if person_detail.first_name_answer == 'PUBLIC' %}
+    {{ person_detail.first_name }}
+{% else %}
+    <label>{{ answer }}</label>
+{% endif %}
+<br>
+
+{% endwith %}
+</body>
+</html>

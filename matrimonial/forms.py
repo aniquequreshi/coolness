@@ -1,0 +1,130 @@
+from django.forms import ModelForm
+from django import forms
+
+from matrimonial.models import Person
+
+# Create the form class.
+
+class PersonForm(ModelForm):
+    # def __init__(self, *args, **kwargs):
+    #     super(DenialForm, self).__init__(*args, **kwargs)
+    #     self.fields['visit_id'].disabled = True
+    #     self.fields['carrier'].disabled = True
+    #     self.fields['date_of_service'].disabled = True
+    #     self.fields['reason'].disabled = True
+
+
+    class Meta:
+        model = Person
+        # widgets = {
+        #     'follow_up_date': forms.SelectDateWidget,
+        # }
+        # fields = '__all__'
+        fields = [
+            'email_address',
+            'email_address_answer',
+            'first_name',
+            'first_name_answer',
+            'last_name',
+            'last_name_answer',
+            'city_of_residence',
+            'city_of_residence_answer',
+            'phone_number',
+            'phone_number_answer',
+            # 'preferred_method_of_contact_by_admin',
+            # 'preferred_method_of_contact_by_admin_answer',
+            'relationship_of_person_completing_form',
+            'relationship_of_person_completing_form_answer',
+            'year_of_birth',
+            'gender',
+            'marital_status',
+            'marital_status_answer',
+            'children_from_previous_marriage',
+            'children_from_previous_marriage_answer',
+            'children_gender_age',
+            'children_gender_age_answer',
+            'custody_of_children',
+            'custody_of_children_answer',
+            'state_of_residence',
+            'state_of_residence_answer',
+            'country_of_residence',
+            'country_of_residence_answer',
+            'willing_to_relocate',
+            'willing_to_relocate_answer',
+            'country_of_birth',
+            'country_of_birth_answer',
+            'countries_of_citizenship',
+            'countries_of_citizenship_answer',
+            'us_visa_status',
+            'us_visa_status_answer',
+            'muslim_origin',
+            'muslim_origin_answer',
+            'religious_sect',
+            'religious_sect_answer',
+            'race_ethnicity',
+            'race_ethnicity_answer',
+            'education',
+            'education_answer',
+            'occupation',
+            'occupation_answer',
+            'travel_for_job',
+            'travel_for_job_answer',
+            'language_spoken',
+            'language_spoken_answer',
+            'height',
+            'height_answer',
+            'weight',
+            'weight_answer',
+            'drink_alcohol',
+            'drink_alcohol_answer',
+            'smoke',
+            'smoke_answer',
+            'prays',
+            'prays_answer',
+            'fast_ramadan',
+            'fast_ramadan_answer',
+            'visit_shrine',
+            'visit_shrine_answer',
+            'wear_hijab',
+            'wear_hijab_answer',
+            'significant_health_issues',
+            'significant_health_issues_answer',
+            'time_frame_marriage',
+            'time_frame_marriage_answer',
+            'father_country',
+            'father_country_answer',
+            'mother_country',
+            'mother_country_answer',
+            'references',
+            'references_answer',
+            'about_me',
+            'about_me_answer',
+            'about_my_ideal_spouse',
+            'about_my_ideal_spouse',
+            'looking_for_in_spouse_age',
+            'looking_for_in_spouse_age_answer',
+            'looking_for_in_spouse_marital',
+            'looking_for_in_spouse_marital_answer',
+            'spouse_height',
+            'spouse_height_answer',
+            'spouse_visa_status',
+            'spouse_visa_status_answer',
+            'spouse_ethnicity',
+            'spouse_ethnicity_answer',
+            'spouse_education',
+            'spouse_education_answer',
+            'spouse_profession',
+            'spouse_profession_answer',
+            'spouse_relocation',
+            'spouse_relocation_answer',
+            'facebook_link',
+            'facebook_link_answer',
+            'instagram_link',
+            'instagram_link_answer'
+            # 'permission_share',
+            # 'permission_share_answer',
+            # 'bypass_admin_contact_directly',
+            # 'bypass_admin_contact_directly_answer',
+            # 'provide_contact_if_yes',
+            # 'provide_contact_if_yes_answer'
+        ]

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+
+</head>
+<body>
+<h1>Quick Profile</h1>
+<table width="25%">
+    <tr>
+        <td><h3><a href="{% url 'person-list'  %}male" id="linkMale" >Looking for a Husband</a></h3></td>
+        <td><h3><a href="{% url 'person-list'  %}female" id="linkFemale">Looking for a Wife</a></h3></td>
+
+    </tr>
+</table>
+
+<br>
+
+ <table>
+     <col width="80">
+     <col width="100">
+     <col width="130">
+     <col width="120">
+     <col width="100">
+     <col width="700">
+
+ <tr>
+     <th align="left">Action</th>
+     <th align="left">ID</th>
+     <th align="left">First Name</th>
+     <th align="left">Last Name</th>
+     <th align="left">Age</th>
+     <th align="left">Picture</th>
+
+ </tr>
+        {% for person in person_detail %}
+            <tr>
+                <td>  <a href="{% url 'person-detail' person.pk %}" >VIEW</a></td>
+                <td>{{ person.last_name }}</td>
+                <td>{{ person.first_name }}</td>
+                <td>{{ person.last_name }}</td>
+                <td>{{ person.last_name }}</td>
+                <td>{{ person.last_name }}</td>
+
+            </tr>
+        {% endfor %}
+ </table>
+
+ {# .... **Now the pagination section** .... #}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+
+</body>
+</html>
